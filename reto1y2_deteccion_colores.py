@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Reto 1: Vision
 # Codigo para detectar colores (amarillo, verde y rojo)
 # Equipo 3
 # Noemi Carolina Guerra Montiel A00826944
@@ -110,13 +111,13 @@ class image_converter:
       self.msgs_motores.publish("Rojo")
       list = Int32MultiArray()
       list.data = [xR, wR, 0] # Para el reto 1
-      self.msgs_seguidor.publish(list) # Para el reto 1
+      self.msgs_seguidor.publish(list) 
     elif(wY > 5) and (wY<500):
       print("Encontre un circulo amarillo")
       self.msgs_motores.publish("Amarillo")
       list = Int32MultiArray()
       #list.data = [xY, wY, 0] # Para el reto 2
-      #self.msgs_seguidor.publish(list) # Para el reto 2
+      #self.msgs_seguidor.publish(list) 
     else:
       self.msgs_motores.publish("Rojo")
       print("No hay circulos")
