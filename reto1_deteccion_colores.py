@@ -110,13 +110,13 @@ class image_converter:
       print("Encontre un circulo rojo")
       self.msgs_motores.publish("Rojo")
       list = Int32MultiArray()
-      list.data = [xR, wR, 0] # Para el reto 1
+      list.data = [xR, wR, 0] 
       self.msgs_seguidor.publish(list) 
     elif(wY > 5) and (wY<500):
       print("Encontre un circulo amarillo")
       self.msgs_motores.publish("Amarillo")
       list = Int32MultiArray()
-      #list.data = [xY, wY, 0] # Para el reto 2
+      #list.data = [xY, wY, 0] 
       #self.msgs_seguidor.publish(list) 
     else:
       self.msgs_motores.publish("Rojo")
