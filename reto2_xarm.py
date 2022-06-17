@@ -68,7 +68,7 @@ class Planner():
 
 
 
-  #Función para imprimir la posicion del xarm
+  #Funcion para imprimir la posicion del xarm
   def printPose(self):
     move_group = self.move_group
     wpose = move_group.get_current_pose().pose
