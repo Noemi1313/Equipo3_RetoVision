@@ -1,6 +1,13 @@
 #!/usr/bin/env python
-#Actividad 4: Seguidor de objetos amarillos e incorporacion de semaforo.
-#Equipo 3
+# Reto 1: Vision
+# Programa para seguir un objeto de color rojo con el puzzlebot
+# Equipo 3
+# Noemi Carolina Guerra Montiel A00826944
+# Maria Fernanda Hernandez Montes A01704918
+# Mizael Beltran Romero A01114973
+# Izac Saul Salazar Flores A01197392
+# Junio 2022
+
 
 #Librerias que contienen funciones para el programa
 from cmath import pi
@@ -40,21 +47,27 @@ class Seguidor():
         print("Pos x: " + str(msg.data[0]) + "\n")
         print("Distancia: " + str(msg.data[1]) + "\n")
 
+        #Giro a la derecha
         if(msg.data[0] > 1000):
             self.vw.angular.z=-0.1
             self.vw.linear.x=0
             print("Girando derecha")
+        #Giro a la izquierda
         if(msg.data[0] < 200):
             self.vw.angular.z=0.1
             self.vw.linear.x=0
             print("Girando izquierda")
+        #Centro
         if(msg.data[0] >=200 and msg.data[0] <= 1000):
             self.vw.angular.z=0
             #Una vez que el objetivo esta centrado vemos su distancia(Datos obtenidos experimentalmente)
+            # Si esta lejos
             if(msg.data[1] < 300): #(300)
                 self.vw.linear.x=0.1
                 print("Avanzando")
+            # Si esta cerca
             if(msg.data[1] > 350): #(350)
+                # Detenerse completamente
                 self.vw.linear.x=0
         self.pubVel()
 
