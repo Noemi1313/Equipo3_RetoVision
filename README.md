@@ -5,3 +5,5 @@
 #### Izac Saul Salazar Flores A01197392
 
 Programas para identificar y seguir colores con Ros y OpenCV, así como para el movimiento del Xarm a través de la cámara del puzzlebot
+
+https://youtu.be/ry44oRKaFuM
